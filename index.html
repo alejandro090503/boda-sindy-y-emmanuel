@@ -97,8 +97,8 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 
 /* ── HERO ── */
 #hero{position:relative;height:100vh;height:100dvh;min-height:620px;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:url('portada.jpg') center 60%/cover no-repeat;background-color:var(--surface);animation:kenBurns 24s ease-in-out infinite}
-@keyframes kenBurns{0%{transform:scale(1.06) translate(0,0)}33%{transform:scale(1.11) translate(-1.5%,-.5%)}66%{transform:scale(1.09) translate(.8%,-1%)}100%{transform:scale(1.06) translate(0,0)}}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%;background-color:var(--surface);animation:kenBurns 26s ease-in-out infinite}
+@keyframes kenBurns{0%{transform:scale(1.04) translate(0,0)}33%{transform:scale(1.08) translate(-1%,-.5%)}66%{transform:scale(1.06) translate(.6%,-.8%)}100%{transform:scale(1.04) translate(0,0)}}
 .hero-veil{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(20,16,10,.5) 0%,rgba(20,16,10,.3) 40%,rgba(20,16,10,.4) 75%,rgba(20,16,10,.6) 100%)}
 .hero-shimmer{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
 .hero-shimmer::after{content:'';position:absolute;top:0;width:55%;height:100%;left:-55%;background:linear-gradient(105deg,transparent 20%,rgba(212,197,178,.05) 45%,rgba(212,197,178,.12) 52%,transparent 75%);animation:heroBeam 9s ease-in-out infinite 2s}
@@ -381,6 +381,24 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 .rsvp-ok-icon{font-size:46px;margin-bottom:12px;display:block}
 .rsvp-ok-title{font-family:'Pinyon Script',cursive;font-size:44px;color:var(--gold);margin-bottom:8px;display:block}
 .rsvp-ok-msg{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:17px;color:var(--text);line-height:1.7;opacity:.85}
+/* ── SECCIONES EXTRA (clima · hashtag · buenos deseos · canciones) ── */
+.clima-card{max-width:340px;margin:24px auto 0;padding:28px 24px;background-image:linear-gradient(rgba(255,255,255,.85),rgba(255,255,255,.85)),url('textura-embossed.jpg');background-size:cover;background-position:center;border:1px solid var(--border);border-radius:4px;position:relative}
+.clima-card::before{content:'';position:absolute;inset:8px;border:1px solid transparent;border-image:var(--gold-grad) 1;pointer-events:none}
+.clima-icon{display:block;margin:0 auto 6px}
+.clima-temps{display:flex;align-items:center;justify-content:center;gap:24px;margin:8px 0 4px}
+.clima-temp{display:flex;flex-direction:column;align-items:center}
+.clima-t-val{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:42px;color:var(--gold);line-height:1}
+.clima-t-lbl{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:14px;color:var(--text);opacity:.72;margin-top:4px}
+.clima-sep{width:1px;height:46px;background:var(--border)}
+.clima-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--text);opacity:.88;margin-top:10px;line-height:1.6}
+.clima-note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13.5px;color:var(--gold);opacity:.8;margin-top:8px;line-height:1.5}
+.hashtag-box{max-width:340px;margin:22px auto 0;padding:28px 22px;border:1px solid var(--border);border-radius:4px;background:rgba(94,0,94,.04);position:relative;text-align:center}
+.hashtag-box svg{display:block;margin:0 auto 8px}
+.hashtag-tag{font-family:'Cormorant Garamond',serif;font-weight:700;font-style:italic;font-size:clamp(24px,7vw,32px);letter-spacing:.01em;background:var(--gold-grad);background-size:220% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#5e005e;line-height:1.2;margin:6px 0 12px;white-space:nowrap;animation:goldFlow 7s ease-in-out infinite}
+.hashtag-msg{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:16px;color:var(--text);opacity:.86;line-height:1.7;max-width:300px;margin:0 auto}
+.wish-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;margin-top:6px;padding:16px 32px;border:1.5px solid var(--gold);background:var(--gold-grad);font-family:'Cormorant Garamond',serif;font-weight:700;font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:#231021;cursor:pointer;border-radius:2px;text-decoration:none;transition:transform .25s,box-shadow .25s;box-shadow:0 6px 20px rgba(94,0,94,.2);min-height:54px}
+.wish-btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(94,0,94,.32)}
+.wish-btn svg{width:17px;height:17px;fill:currentColor;flex-shrink:0}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 </style>
 </head>
@@ -399,7 +417,7 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 
   <!-- HERO -->
   <section id="hero">
-    <div class="hero-bg"></div>
+    <video class="hero-bg" autoplay muted loop playsinline preload="auto" poster="portada.jpg"><source src="hero.mp4" type="video/mp4"></video>
     <div class="hero-veil"></div>
     <div class="hero-shimmer"></div>
     <div class="hero-desliza">Desliza</div>
@@ -437,7 +455,7 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
     <span class="eyebrow stagger-child" style="margin-top:26px;font-size:15px;letter-spacing:.16em;line-height:1.85;color:var(--text);opacity:.92;font-weight:600">Tenemos el honor de invitarles<br>a celebrar nuestra unión en matrimonio</span>
     <p class="stagger-child intro-date" style="margin-top:24px">Viernes 25 de Septiembre de 2026</p>
     <div class="invite-verse stagger-child" style="margin-top:30px">
-      <p class="invite-verse-rut" style="margin-bottom:0;border-bottom:none;padding-bottom:0">Todo tiene su momento, y cada cosa su tiempo bajo el cielo.</p>
+      <p class="invite-verse-rut" style="margin-bottom:0;border-bottom:none;padding-bottom:0">Todo tiene su tiempo, y todo lo que se quiere debajo del cielo tiene su hora.</p>
       <p class="invite-verse-end" style="margin-top:12px;font-style:italic;font-size:14px;letter-spacing:.06em;color:var(--gold)">— Eclesiastés 3, 1</p>
     </div>
   </section>
@@ -561,6 +579,32 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
     <div class="itin-list">
       <div class="itin-item rv"><div class="itin-dot"></div><div class="itin-time">2:00 p.m.</div><div class="itin-ev">Ceremonia Religiosa</div></div>
       <div class="itin-item rv"><div class="itin-dot alt"></div><div class="itin-time">6:00 p.m.</div><div class="itin-ev">Cóctel</div></div>
+    </div>
+  </section>
+
+  <!-- EL CLIMA ESE DÍA -->
+  <section class="sec-sm rv" style="text-align:center;background:var(--soft)">
+    <span class="eyebrow">Para que lo tomes en cuenta</span>
+    <h2 class="heading-sm">El Clima ese Día</h2>
+    <div class="orn" style="margin-top:14px"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
+    <div class="clima-card rv">
+      <svg class="clima-icon" width="58" height="52" viewBox="0 0 64 56" fill="none" aria-hidden="true">
+        <g stroke="#5e005e" stroke-width="1.6" stroke-linecap="round">
+          <circle cx="24" cy="20" r="9" fill="rgba(94,0,94,.10)"/>
+          <line x1="24" y1="4" x2="24" y2="9"/><line x1="24" y1="31" x2="24" y2="34"/>
+          <line x1="8" y1="20" x2="12" y2="20"/><line x1="38" y1="20" x2="40" y2="20"/>
+          <line x1="12.5" y1="8.5" x2="15.5" y2="11.5"/><line x1="32.5" y1="28.5" x2="35" y2="31"/>
+          <line x1="12.5" y1="31.5" x2="15.5" y2="28.5"/><line x1="33" y1="9" x2="35.5" y2="6.5"/>
+        </g>
+        <path d="M30 44 a10 10 0 0 1 9.8-12 a12 12 0 0 1 22.5 4.2 A8 8 0 0 1 54 52 H38 a8 8 0 0 1-8-8 Z" fill="rgba(212,197,178,.28)" stroke="#5e005e" stroke-width="1.6" stroke-linejoin="round"/>
+      </svg>
+      <div class="clima-temps">
+        <div class="clima-temp"><span class="clima-t-val">24°</span><span class="clima-t-lbl">Máxima</span></div>
+        <div class="clima-sep"></div>
+        <div class="clima-temp"><span class="clima-t-val">10°</span><span class="clima-t-lbl">Mínima</span></div>
+      </div>
+      <p class="clima-desc">Otoño en Colorado — días templados y noches frescas.</p>
+      <p class="clima-note">Clima aproximado para la temporada. Te sugerimos llevar una capa extra para la noche.</p>
     </div>
   </section>
 
@@ -691,6 +735,48 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
     </div>
   </section>
 
+  <!-- HASHTAG -->
+  <section class="sec-sm rv" style="text-align:center;background:var(--soft)">
+    <span class="eyebrow">En Redes Sociales</span>
+    <h2 class="heading-sm">Nuestro Hashtag</h2>
+    <div class="orn" style="margin-top:14px"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
+    <div class="hashtag-box rv">
+      <svg width="46" height="40" viewBox="0 0 64 54" fill="none" aria-hidden="true">
+        <rect x="3" y="12" width="58" height="39" rx="5" fill="rgba(94,0,94,.05)" stroke="#5e005e" stroke-width="1.5"/>
+        <path d="M22 12 l4-7h12l4 7" fill="none" stroke="#5e005e" stroke-width="1.5" stroke-linejoin="round"/>
+        <circle cx="32" cy="31" r="11" fill="rgba(94,0,94,.05)" stroke="#5e005e" stroke-width="1.5"/>
+        <circle cx="32" cy="31" r="5.5" fill="rgba(212,197,178,.3)" stroke="#5e005e" stroke-width="1.2"/>
+        <circle cx="52" cy="20" r="2.2" fill="#5e005e"/>
+      </svg>
+      <p class="hashtag-tag">#EmmanuelYSindy</p>
+      <p class="hashtag-msg">Comparte tus fotos y videos del gran día en Facebook e Instagram usando nuestro hashtag. ¡Queremos revivirlo todo contigo!</p>
+    </div>
+  </section>
+
+  <!-- BUENOS DESEOS -->
+  <section class="sec rv" style="text-align:center">
+    <span class="eyebrow">Con Cariño</span>
+    <h2 class="heading-sm">Buenos Deseos</h2>
+    <div class="orn" style="margin-top:14px"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
+    <p class="gift-msg rv" style="margin-top:20px;max-width:340px">Déjanos unas palabras, un consejo o una bendición para nuestra nueva vida juntos. Nos hará muy felices leerte. 💜</p>
+    <a class="wish-btn" href="https://wa.me/15203659403?text=%C2%A1Hola%20Emmanuel%20y%20Sindy!%20Les%20mando%20un%20buen%20deseo%20para%20su%20boda%3A%20" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
+      Enviar un buen deseo
+    </a>
+  </section>
+
+  <!-- SUGERENCIA DE CANCIONES -->
+  <section class="sec rv" style="text-align:center;background:var(--soft)">
+    <span class="eyebrow">Para la Fiesta</span>
+    <h2 class="heading-sm">Sugerencia de Canciones</h2>
+    <div class="orn" style="margin-top:14px"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
+    <p class="gift-msg rv" style="margin-top:20px;max-width:340px">¿Qué canción no puede faltar para que bailes con nosotros toda la noche? Ayúdanos a armar la playlist perfecta.</p>
+    <a class="wish-btn" href="https://wa.me/15203659403?text=%C2%A1Hola!%20Mi%20sugerencia%20de%20canci%C3%B3n%20para%20la%20boda%20de%20Emmanuel%20y%20Sindy%20es%3A%20" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/></svg>
+      Sugerir una canción
+    </a>
+  </section>
+
   <!-- BANDA FOTOGRÁFICA 2 -->
   <div class="photo-band rv">
     <img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/581b4bca-7a10-44ad-929d-4f5b42fa6db4/1780197639806-0.jpeg" alt="Emmanuel y Sindy bailando" loading="lazy" style="object-position:center 30%">
@@ -776,7 +862,7 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 </div>
 
 <!-- AUDIO: Supabase, preload=none para no consumir egress en Vercel -->
-<audio id="bgAudio" loop preload="none"><source src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/audio/boda-nelly-y-anyelo/cancion.mp3" type="audio/mpeg"></audio>
+<audio id="bgAudio" loop preload="none"><source src="cancion.mp3" type="audio/mpeg"></audio>
 <button class="vinyl-btn" id="musicFab" type="button" aria-label="Reproducir música de la invitación">
   <div class="vinyl-tonearm"><div class="vinyl-tonearm-pivot"></div><div class="vinyl-tonearm-line"></div><div class="vinyl-tonearm-head"></div></div>
   <div class="vinyl-spin"><div class="vinyl-disc"><div class="vinyl-sheen"></div><div class="vinyl-label-text">E&amp;S<small>2026</small></div><div class="vinyl-hole"></div></div></div>
