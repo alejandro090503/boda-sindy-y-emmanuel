@@ -23,20 +23,29 @@
 <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Pinyon+Script&family=Jost:wght@300;400&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#F9F2F8;
-  --surface:#EBDDEF;
+  /* Paleta tomada del arreglo floral del cliente */
+  --vino:#1E0714;        /* rosas oscuras, casi negro */
+  --ciruela:#40203A;     /* ciruela profunda */
+  --orquidea:#8D4573;    /* rosa magenta central */
+  --lila-osc:#7D4771;    /* spray lila oscuro */
+  --lila:#B48AA0;        /* rosas lila claras */
+  --malva:#B87D87;       /* malva rosado */
+  --blush:#D1AFA7;       /* rosa palo */
+  --bg:#FBF6F8;
+  --surface:#E7D3E0;     /* tinte lila */
+  --surface2:#F3DED6;    /* tinte rosa palo */
+  --surface3:#E2D5E4;    /* tinte lila grisáceo */
   --card:#ffffff;
-  --accent:#8E5F9E;
-  --dark:#2F1730;
-  --text:#2B1F2C;
+  --accent:#8D4573;
+  --dark:#40203A;
+  --text:#2E1B2A;
   --gold:#9e7d50;
   --gold-light:#D4C5B2;
-  --blush:#F0E7F2;
-  --lila:#C9B6D8;
-  --ciruela:#5C2A55;
   --border:rgba(158,125,80,.32);
   --border-light:rgba(158,125,80,.17);
   --soft:linear-gradient(180deg,var(--bg) 0%,var(--surface) 15%,var(--surface) 85%,var(--bg) 100%);
+  --soft2:linear-gradient(180deg,var(--bg) 0%,var(--surface2) 15%,var(--surface2) 85%,var(--bg) 100%);
+  --soft3:linear-gradient(180deg,var(--bg) 0%,var(--surface3) 15%,var(--surface3) 85%,var(--bg) 100%);
   --gold-grad:linear-gradient(135deg,#6b5021 0%,#a07840 26%,#D4C5B2 50%,#a07840 74%,#6b5021 100%);
 }
 .gold-metal{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#9e7d50}
@@ -74,7 +83,7 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 .orn.bot{margin:24px auto 0}
 .orn-line{flex:1;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent)}
 .orn-diamond{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:.75}
-.orn-diamond-sm{width:4px;height:4px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:.45;margin:0 2px}
+.orn-diamond-sm{width:4px;height:4px;background:var(--lila-osc);transform:rotate(45deg);flex-shrink:0;opacity:.45;margin:0 2px}
 
 /* ── TYPOGRAPHY ── */
 .eyebrow{font-family:'Cormorant Garamond',serif;font-style:normal;font-weight:600;font-size:15px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:14px;line-height:1.7;display:block}
@@ -128,10 +137,10 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 .cd-value{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,11vw,54px);font-weight:400;color:var(--dark);line-height:1;letter-spacing:-1px;transition:transform .15s,opacity .15s}
 .cd-lbl{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:700;font-size:16px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:6px}
 .cd-sep{display:flex;flex-direction:column;gap:6px;padding-bottom:20px;opacity:.3}
-.cd-dot{width:3px;height:3px;background:var(--gold);border-radius:50%}
+.cd-dot{width:3px;height:3px;background:var(--malva);border-radius:50%}
 .cd-wrap{position:relative;max-width:380px;margin:0 auto}
 .cd-ring{position:absolute;inset:-10px;border-radius:14px;border:1px solid rgba(158,125,80,.1);pointer-events:none;animation:cdRing 4.5s ease-in-out infinite}
-@keyframes cdRing{0%,100%{border-color:rgba(158,125,80,.1);box-shadow:0 0 0 0 rgba(158,125,80,0)}50%{border-color:rgba(158,125,80,.24);box-shadow:0 0 30px rgba(158,125,80,.06)}}
+@keyframes cdRing{0%,100%{border-color:rgba(184,125,135,.14);box-shadow:0 0 0 0 rgba(184,125,135,0)}50%{border-color:rgba(184,125,135,.30);box-shadow:0 0 30px rgba(141,69,115,.08)}}
 .cd-para{font-family:'Italiana',serif;font-size:10px;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);opacity:.42;display:block;text-align:center;margin-top:16px}
 
 /* ── FAMILIARES ── */
@@ -184,18 +193,25 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 .btn-cal svg{width:13px;height:13px;fill:currentColor}
 
 /* ── ITINERARIO — camino en S (estilo stephanie-david) ── */
+#itinerario{background:linear-gradient(175deg,#3A1830 0%,#40203A 45%,#2A1024 100%);position:relative}
+#itinerario::after{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 70% 45% at 50% 22%,rgba(141,69,115,.22) 0%,transparent 70%)}
+#itinerario > *{position:relative;z-index:1}
+#itinerario .eyebrow{color:var(--gold-light);opacity:.9}
+#itinerario .orn-line{background:linear-gradient(to right,transparent,rgba(212,197,178,.5),transparent)}
+#itinerario .orn-diamond{background:var(--gold-light)}
+#itinerario .orn-diamond-sm{background:var(--lila)}
 .timeline{margin-top:40px;position:relative;padding:18px 0 6px;min-height:340px}
 .tl-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:visible}
-.tl-svg-bg{stroke:rgba(158,125,80,.20);stroke-width:1;fill:none;stroke-dasharray:2 5}
-.tl-svg-path{stroke:var(--gold);stroke-width:1.6;stroke-linecap:round;fill:none;filter:drop-shadow(0 0 5px rgba(158,125,80,.40))}
+.tl-svg-bg{stroke:rgba(212,197,178,.22);stroke-width:1;fill:none;stroke-dasharray:2 5}
+.tl-svg-path{stroke:var(--gold-light);stroke-width:1.6;stroke-linecap:round;fill:none;filter:drop-shadow(0 0 6px rgba(212,197,178,.45))}
 .tl-row{position:relative;z-index:1;min-height:158px;display:flex;align-items:center;margin-bottom:14px}
 .tl-row[data-side="left"]{padding-left:58px;padding-right:44%;justify-content:flex-start;text-align:left}
 .tl-row[data-side="right"]{padding-right:58px;padding-left:44%;justify-content:flex-end;text-align:right}
 .tl-row-inner{max-width:168px;display:flex;flex-direction:column;gap:2px;position:relative;padding:6px 4px}
-.tl-row-inner::before{content:'';position:absolute;inset:-6px -14px;background:radial-gradient(ellipse at center,rgba(255,255,255,.94) 0%,rgba(255,255,255,.6) 55%,rgba(255,255,255,0) 100%);z-index:-1;border-radius:16px;pointer-events:none}
-.tl-t{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:14px;color:var(--gold);letter-spacing:2.5px;text-transform:uppercase;line-height:1}
-.tl-ev{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:21px;color:var(--text);line-height:1.22;margin-top:5px}
-.tl-de{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:14px;color:var(--text);opacity:.72;line-height:1.55;margin-top:3px}
+.tl-row-inner::before{content:'';position:absolute;inset:-6px -14px;background:radial-gradient(ellipse at center,rgba(45,18,38,.92) 0%,rgba(45,18,38,.6) 55%,rgba(45,18,38,0) 100%);z-index:-1;border-radius:16px;pointer-events:none}
+.tl-t{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:14px;color:var(--gold-light);letter-spacing:2.5px;text-transform:uppercase;line-height:1}
+.tl-ev{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:21px;color:#F6EEF2;line-height:1.22;margin-top:5px}
+.tl-de{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:14px;color:#E4D2DC;opacity:.88;line-height:1.55;margin-top:3px}
 .tl-row-inner > *{opacity:0;transform:translateY(8px);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1)}
 .tl-row[data-side="left"] .tl-row-inner > *{transform:translateY(8px) translateX(-6px)}
 .tl-row[data-side="right"] .tl-row-inner > *{transform:translateY(8px) translateX(6px)}
@@ -203,11 +219,15 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 .tl-row.on .tl-t{transition-delay:.08s}
 .tl-row.on .tl-ev{transition-delay:.20s}
 .tl-row.on .tl-de{transition-delay:.32s}
-.tl-dot{position:absolute;top:50%;width:14px;height:14px;margin-top:-7px;border-radius:50%;background:var(--bg);border:1.5px solid var(--gold);transform:scale(0);transition:transform .55s cubic-bezier(.34,1.56,.64,1),box-shadow .55s,background .55s;z-index:2}
+.tl-dot{position:absolute;top:50%;width:14px;height:14px;margin-top:-7px;border-radius:50%;background:#2A1024;border:1.5px solid var(--gold);transform:scale(0);transition:transform .55s cubic-bezier(.34,1.56,.64,1),box-shadow .55s,background .55s;z-index:2}
 .tl-row[data-side="left"] .tl-dot{left:22px}
 .tl-row[data-side="right"] .tl-dot{right:22px}
-.tl-row.on .tl-dot{transform:scale(1);background:var(--gold);box-shadow:0 0 0 3px rgba(255,255,255,.9),0 0 12px rgba(158,125,80,.55),0 0 24px rgba(201,182,216,.45)}
-.tl-orn{position:absolute;top:50%;width:40px;height:40px;margin-top:-20px;border-radius:50%;border:1px dashed rgba(142,95,158,.35);opacity:0;animation:tlOrnRotate 22s linear infinite;transition:opacity .9s ease;pointer-events:none;z-index:1}
+.tl-row.on .tl-dot{transform:scale(1);background:var(--gold);box-shadow:0 0 0 3px rgba(42,16,36,.9),0 0 12px rgba(158,125,80,.55),0 0 24px rgba(180,138,160,.5)}
+.tl-row[data-side="right"] .tl-dot{border-color:#C97FA8}
+.tl-row[data-side="right"].on .tl-dot{background:#C97FA8;box-shadow:0 0 0 3px rgba(42,16,36,.9),0 0 12px rgba(141,69,115,.5),0 0 24px rgba(180,138,160,.45)}
+.tl-row[data-side="right"] .tl-pulse{border-color:#C97FA8}
+.tl-row[data-side="right"] .tl-t{color:#D9A8C4}
+.tl-orn{position:absolute;top:50%;width:40px;height:40px;margin-top:-20px;border-radius:50%;border:1px dashed rgba(217,168,196,.40);opacity:0;animation:tlOrnRotate 22s linear infinite;transition:opacity .9s ease;pointer-events:none;z-index:1}
 .tl-row[data-side="left"] .tl-orn{left:9px}
 .tl-row[data-side="right"] .tl-orn{right:9px}
 .tl-row.on .tl-orn{opacity:1}
@@ -232,7 +252,7 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 .dc-fig svg,.dc-fig img{display:block;filter:drop-shadow(0 6px 16px rgba(20,16,10,.16))}
 .dc-fig img{height:215px;width:auto;max-width:100%;object-fit:contain}
 .dc-fig-ttl{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);line-height:1}
-.dc-fig-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:var(--text);opacity:.7;margin-top:-8px}
+.dc-fig-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:var(--lila-osc);opacity:.95;margin-top:-8px}
 .dc-avoid-wrap{margin-top:8px;padding-top:24px;border-top:1px solid rgba(158,125,80,.18);max-width:340px;margin-left:auto;margin-right:auto}
 .dc-avoid-lbl{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);text-align:center;display:block;margin-bottom:18px}
 .dc-avoid-row{display:flex;justify-content:center;gap:18px;margin-bottom:18px;flex-wrap:wrap}
@@ -256,10 +276,11 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 .wheel-scene{position:relative;width:100%;height:420px;margin:36px auto 0;perspective:1300px;transform-style:preserve-3d;overflow:visible}
 .wheel-ring{position:absolute;width:100%;height:100%;transform-style:preserve-3d;cursor:grab}
 .wheel-ring.dragging{cursor:grabbing}
-.wheel-card{position:absolute;width:200px;height:280px;left:50%;top:50%;margin-left:-100px;margin-top:-140px;border-radius:14px;overflow:hidden;border:1.5px solid rgba(158,125,80,.55);box-shadow:0 16px 46px rgba(20,16,10,.25);user-select:none;-webkit-user-select:none;background:var(--surface)}
+.wheel-card{position:absolute;width:200px;height:280px;left:50%;top:50%;margin-left:-100px;margin-top:-140px;border-radius:14px;overflow:hidden;border:1.5px solid rgba(141,69,115,.45);box-shadow:0 16px 46px rgba(20,16,10,.25);user-select:none;-webkit-user-select:none;background:var(--surface)}
+.wheel-card:nth-child(even){border-color:rgba(158,125,80,.55)}
 .wheel-card::after{content:'';position:absolute;inset:0;border-radius:14px;box-shadow:inset 0 0 0 1px rgba(212,197,178,.3);pointer-events:none}
 .wheel-card img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;pointer-events:none}
-.gal-hint{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;letter-spacing:3px;color:var(--gold);margin-top:24px;opacity:.7}
+.gal-hint{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;letter-spacing:3px;color:var(--orquidea);margin-top:24px;opacity:.7}
 .gal-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(15px,4vw,17px);color:var(--text);opacity:.55;text-align:center;margin:12px auto 0;max-width:260px;line-height:1.7}
 
 /* ── BANDA FOTOGRÁFICA ── */
@@ -267,12 +288,12 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 .photo-band img{width:100%;height:100%;object-fit:cover;display:block;animation:bandPan 22s ease-in-out infinite alternate}
 @keyframes bandPan{0%{transform:scale(1.04)}100%{transform:scale(1.12)}}
 .photo-band-veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(20,16,10,.58) 0%,rgba(20,16,10,.12) 45%,rgba(20,16,10,.28) 100%)}
-.photo-band-frame{position:absolute;inset:14px;border:1px solid rgba(212,197,178,.45);pointer-events:none}
+.photo-band-frame{position:absolute;inset:14px;border:1px solid rgba(209,175,167,.55);pointer-events:none}
 .photo-band-quote{position:absolute;bottom:30px;left:24px;right:24px;text-align:center;font-family:'Pinyon Script',cursive;color:#fdfbf6;font-size:clamp(26px,8vw,34px);line-height:1.2;text-shadow:0 2px 14px rgba(0,0,0,.55);z-index:2}
 .photo-band-eyebrow{position:absolute;top:30px;left:0;right:0;text-align:center;font-family:'Italiana',serif;font-size:12px;letter-spacing:.42em;text-transform:uppercase;color:rgba(212,197,178,.92);text-shadow:0 1px 8px rgba(0,0,0,.6);z-index:2}
 
 /* ── REGALOS ── */
-#regalos{background:var(--soft);overflow:hidden}
+#regalos{background:var(--soft2);overflow:hidden}
 #regalos::after{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 80% 50% at 50% 12%,rgba(158,125,80,.07) 0%,transparent 70%)}
 .gift-icon-wrap{display:flex;justify-content:center;margin:8px 0 22px}
 .gift-icon-wrap svg{opacity:.9;filter:drop-shadow(0 2px 10px rgba(158,125,80,.3))}
@@ -310,7 +331,7 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 .qr-img{display:block;width:188px;height:188px;position:relative;z-index:1}
 .qr-c{position:absolute;width:13px;height:13px;border-color:var(--gold);border-style:solid;border-width:0;z-index:2}
 .qr-c.tl{top:4px;left:4px;border-top-width:1.5px;border-left-width:1.5px}.qr-c.tr{top:4px;right:4px;border-top-width:1.5px;border-right-width:1.5px}.qr-c.bl{bottom:4px;left:4px;border-bottom-width:1.5px;border-left-width:1.5px}.qr-c.br{bottom:4px;right:4px;border-bottom-width:1.5px;border-right-width:1.5px}
-.qr-scan-lbl{font-family:'Italiana',serif;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+.qr-scan-lbl{font-family:'Italiana',serif;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--lila-osc)}
 .qr-note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--text);opacity:.6}
 
 /* ── RSVP ── */
@@ -342,12 +363,12 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 .invite-verse-end{font-weight:500}
 
 /* ── FOOTER ── */
-#footer{padding:96px 32px 52px;text-align:center;background:linear-gradient(to bottom,var(--bg) 0%,#2F1730 16%,#43204A 48%,#2B1530 72%,#1B0E1F 100%);position:relative;overflow:visible}
+#footer{padding:96px 32px 52px;text-align:center;background:linear-gradient(to bottom,var(--bg) 0%,#40203A 14%,#5A2A4B 42%,#3A1830 70%,#1E0714 100%);position:relative;overflow:visible}
 #footer::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 40%,rgba(158,125,80,.05) 0%,transparent 70%);pointer-events:none}
 #footer::after{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(to right,transparent,rgba(158,125,80,.28),rgba(212,197,178,.45),rgba(158,125,80,.28),transparent)}
 .footer-initials{display:flex;align-items:baseline;gap:8px;margin-bottom:12px;overflow:visible;justify-content:center}
 .fi-letter{font-family:'Pinyon Script',cursive;font-size:74px;line-height:1.5;padding:12px 24px;margin:-12px -16px;background:linear-gradient(135deg,#D4C5B2 0%,#cdae72 28%,#9e7d50 50%,#cdae72 72%,#D4C5B2 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldFlow 6s ease-in-out infinite}
-.fi-amp{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:#D4C5B2;opacity:.5;align-self:center;margin:0 4px}
+.fi-amp{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--lila);opacity:.75;align-self:center;margin:0 4px}
 .footer-monogram-wrap{display:flex;flex-direction:column;align-items:center;margin-bottom:28px;position:relative;overflow:visible}
 .footer-orn-line{display:flex;align-items:center;gap:10px;opacity:.35}
 .footer-orn-line .fo-line{width:48px;height:1px;background:linear-gradient(to right,transparent,#D4C5B2)}.footer-orn-line .fo-line:last-child{background:linear-gradient(to left,transparent,#D4C5B2)}
@@ -384,27 +405,27 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 .vinyl-tonearm-pivot{position:absolute;top:0;right:2px;width:7px;height:7px;background:radial-gradient(circle,#D4C5B2,#9e7d50);border-radius:50%;box-shadow:0 1px 3px rgba(0,0,0,.3)}
 
 /* ── RSVP · PANEL (formulario) ── */
-#rsvpPasesNote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;font-weight:600;color:var(--gold);text-align:center;margin:0 auto 18px;max-width:340px;line-height:1.5}
-.rsvp-pases-display{max-width:340px;margin:0 auto 22px;padding:16px 26px;background:rgba(158,125,80,.05);border:1px solid rgba(158,125,80,.24);border-radius:10px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+#rsvpPasesNote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;font-weight:600;color:var(--orquidea);text-align:center;margin:0 auto 18px;max-width:340px;line-height:1.5}
+.rsvp-pases-display{max-width:340px;margin:0 auto 22px;padding:16px 26px;background:rgba(180,138,160,.14);border:1px solid rgba(141,69,115,.22);border-radius:10px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .rsvp-pases-label{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--text);opacity:.78}
-.rsvp-pases-num{font-family:'Pinyon Script',cursive;font-size:46px;color:var(--gold);line-height:1}
+.rsvp-pases-num{font-family:'Pinyon Script',cursive;font-size:46px;color:var(--orquidea);line-height:1}
 .rsvp-toggle{display:flex;gap:10px;max-width:340px;margin:0 auto 18px}
 .rsvp-toggle-btn{flex:1;padding:15px 8px;border:1.5px solid rgba(158,125,80,.26);background:rgba(255,255,255,.65);cursor:pointer;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:17px;color:var(--text);border-radius:8px;transition:all .25s;min-height:52px}
 .rsvp-toggle-btn:disabled{opacity:.45;cursor:not-allowed}
-.rsvp-toggle-btn.selected-yes{background:rgba(158,125,80,.10);border-color:var(--gold);color:var(--gold)}
+.rsvp-toggle-btn.selected-yes{background:rgba(141,69,115,.12);border-color:var(--orquidea);color:var(--orquidea)}
 .rsvp-toggle-btn.selected-no{background:rgba(187,161,128,.08);border-color:var(--accent);color:var(--accent)}
 .rsvp-fields{display:flex;flex-direction:column;gap:10px;max-width:340px;margin:0 auto 18px}
 .rsvp-asignados{display:flex;flex-direction:column;gap:12px;max-width:360px;margin:0 auto 20px}
 .rsvp-person-card{display:flex;flex-direction:column;gap:10px;padding:14px 16px;background:rgba(255,255,255,.72);border:1.5px solid rgba(158,125,80,.28);border-radius:12px;transition:border-color .25s,background .25s}
-.rsvp-person-card[data-choice="yes"]{border-color:var(--gold);background:rgba(158,125,80,.07)}
+.rsvp-person-card[data-choice="yes"]{border-color:var(--orquidea);background:rgba(141,69,115,.09)}
 .rsvp-person-card[data-choice="no"]{border-color:var(--accent);background:rgba(187,161,128,.09)}
 .rsvp-person-name{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:20px;color:var(--dark);text-align:center;line-height:1.2}
 .rsvp-person-toggle{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .rsvp-mini-btn{padding:11px 12px;border:1.5px solid rgba(158,125,80,.28);border-radius:10px;background:rgba(255,255,255,.6);font-family:'Cormorant Garamond',serif;font-weight:600;font-size:14px;color:var(--text);letter-spacing:.04em;cursor:pointer;transition:all .25s;-webkit-tap-highlight-color:transparent;min-height:46px}
 .rsvp-mini-btn:hover:not(:disabled){border-color:var(--gold);background:rgba(255,255,255,.92)}
 .rsvp-mini-btn:disabled{opacity:.55;cursor:not-allowed}
-.rsvp-mini-yes-on{background:var(--gold)!important;border-color:var(--gold)!important;color:#fff!important}
-.rsvp-mini-no-on{background:var(--accent)!important;border-color:var(--accent)!important;color:#fff!important}
+.rsvp-mini-yes-on{background:var(--orquidea)!important;border-color:var(--orquidea)!important;color:#fff!important}
+.rsvp-mini-no-on{background:var(--malva)!important;border-color:var(--malva)!important;color:#fff!important}
 .rsvp-input{width:100%;padding:15px 20px;border:1.5px solid rgba(158,125,80,.26);border-radius:10px;background:rgba(255,255,255,.8);font-family:'Cormorant Garamond',serif;font-weight:500;font-size:17px;color:var(--text);letter-spacing:.02em;outline:none;transition:border-color .3s,box-shadow .3s;-webkit-appearance:none;min-height:50px}
 .rsvp-input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(158,125,80,.12);background:rgba(255,255,255,.97)}
 .rsvp-input::placeholder{color:var(--text);opacity:.5;font-weight:400}
@@ -421,14 +442,24 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 .clima-temps{display:flex;align-items:center;justify-content:center;gap:24px;margin:8px 0 4px}
 .clima-temp{display:flex;flex-direction:column;align-items:center}
 .clima-t-val{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:42px;color:var(--gold);line-height:1}
-.clima-t-lbl{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:14px;color:var(--text);opacity:.72;margin-top:4px}
-.clima-sep{width:1px;height:46px;background:var(--border)}
+.clima-t-lbl{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:14px;color:var(--lila-osc);opacity:.92;margin-top:4px}
+.clima-sep{width:1px;height:46px;background:linear-gradient(to bottom,transparent,var(--malva),transparent)}
 .clima-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--text);opacity:.88;margin-top:10px;line-height:1.6}
-.clima-note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13.5px;color:var(--gold);opacity:.8;margin-top:8px;line-height:1.5}
-.hashtag-box{max-width:340px;margin:22px auto 0;padding:28px 22px;border:1px solid var(--border);border-radius:4px;background:rgba(158,125,80,.04);position:relative;text-align:center}
+.clima-note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13.5px;color:var(--lila-osc);opacity:.8;margin-top:8px;line-height:1.5}
+.hashtag-box{max-width:340px;margin:22px auto 0;padding:28px 22px;border:1px solid var(--border);border-radius:4px;background:rgba(180,138,160,.10);position:relative;text-align:center}
 .hashtag-box svg{display:block;margin:0 auto 8px}
-.hashtag-tag{font-family:'Cormorant Garamond',serif;font-weight:700;font-style:italic;font-size:clamp(24px,7vw,32px);letter-spacing:.01em;background:var(--gold-grad);background-size:220% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#9e7d50;line-height:1.2;margin:6px 0 12px;white-space:nowrap;animation:goldFlow 7s ease-in-out infinite}
+.hashtag-tag{font-family:'Cormorant Garamond',serif;font-weight:700;font-style:italic;font-size:clamp(24px,7vw,32px);letter-spacing:.01em;background:linear-gradient(135deg,#40203A 0%,#8D4573 34%,#B48AA0 52%,#8D4573 70%,#40203A 100%);background-size:220% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#9e7d50;line-height:1.2;margin:6px 0 12px;white-space:nowrap;animation:goldFlow 7s ease-in-out infinite}
 .hashtag-msg{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:16px;color:var(--text);opacity:.86;line-height:1.7;max-width:300px;margin:0 auto}
+.msg-toggle{display:flex;gap:0;max-width:340px;margin:22px auto 0;border:1px solid var(--border);border-radius:50px;overflow:hidden}
+.msg-tab{flex:1;padding:13px 8px;background:transparent;border:none;cursor:pointer;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:16px;color:var(--text);transition:all .25s;letter-spacing:.02em;min-height:48px}
+.msg-tab.active{background:var(--dark);color:var(--gold-light)}
+.msg-hint{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:17px;color:var(--text);opacity:.85;line-height:1.7;max-width:330px;margin:18px auto 18px}
+.msg-box{display:flex;flex-direction:column;gap:10px;max-width:340px;margin:0 auto}
+.msg-input{width:100%;padding:15px 20px;border:1.5px solid rgba(158,125,80,.30);border-radius:10px;background:rgba(255,255,255,.85);font-family:'Cormorant Garamond',serif;font-weight:500;font-size:17px;color:var(--text);letter-spacing:.02em;outline:none;transition:border-color .3s,box-shadow .3s;-webkit-appearance:none;min-height:50px}
+.msg-input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(158,125,80,.14);background:#fff}
+.msg-input::placeholder{color:var(--text);opacity:.5;font-weight:400}
+.msg-area{min-height:104px;resize:vertical;line-height:1.65;padding-top:14px;font-style:italic}
+#msg-feedback{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:16px;text-align:center;margin:6px auto 0;display:none;line-height:1.5}
 .wish-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;margin-top:6px;padding:16px 32px;border:1.5px solid var(--gold);background:var(--gold-grad);font-family:'Cormorant Garamond',serif;font-weight:700;font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:#231021;cursor:pointer;border-radius:2px;text-decoration:none;transition:transform .25s,box-shadow .25s;box-shadow:0 6px 20px rgba(158,125,80,.2);min-height:54px}
 .wish-btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(158,125,80,.32)}
 .wish-btn svg{width:17px;height:17px;fill:currentColor;flex-shrink:0}
@@ -503,7 +534,7 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
   </div>
 
   <!-- CUENTA REGRESIVA -->
-  <section class="sec-sm rv" style="text-align:center;background:var(--soft)">
+  <section class="sec-sm rv" style="text-align:center;background:var(--soft2)">
     <span class="eyebrow">Faltan</span>
     <div class="cd-wrap">
       <div class="cd-ring"></div>
@@ -605,7 +636,7 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
   </section>
 
   <!-- ITINERARIO -->
-  <section class="sec rv" style="text-align:center;overflow:hidden">
+  <section id="itinerario" class="sec rv" style="text-align:center;overflow:hidden">
     <span class="eyebrow stagger-child">El Programa del Día</span>
     <h2 class="heading-sm stagger-child">Itinerario</h2>
     <div class="orn stagger-child" style="margin-top:16px"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
@@ -626,7 +657,7 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
   </section>
 
   <!-- EL CLIMA ESE DÍA -->
-  <section class="sec-sm rv" style="text-align:center;background:var(--soft)">
+  <section class="sec-sm rv" style="text-align:center;background:var(--soft3)">
     <span class="eyebrow">Para que lo tomes en cuenta</span>
     <h2 class="heading-sm">El Clima ese Día</h2>
     <div class="orn" style="margin-top:14px"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
@@ -652,7 +683,7 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
   </section>
 
   <!-- DRESS CODE -->
-  <section class="sec rv" style="text-align:center;background:var(--soft)">
+  <section class="sec rv" style="text-align:center;background:var(--soft2)">
     <span class="eyebrow">Código de Vestimenta</span>
     <h2 class="heading-sm">Etiqueta</h2>
     <div class="orn" style="margin-top:16px"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
@@ -768,7 +799,7 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
   </section>
 
   <!-- HASHTAG -->
-  <section class="sec-sm rv" style="text-align:center;background:var(--soft)">
+  <section class="sec-sm rv" style="text-align:center;background:var(--soft3)">
     <span class="eyebrow">En Redes Sociales</span>
     <h2 class="heading-sm">Nuestro Hashtag</h2>
     <div class="orn" style="margin-top:14px"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
@@ -785,28 +816,22 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
     </div>
   </section>
 
-  <!-- BUENOS DESEOS -->
+  <!-- MENSAJES: BUENOS DESEOS + CANCIONES -->
   <section class="sec rv" style="text-align:center">
     <span class="eyebrow">Con Cariño</span>
-    <h2 class="heading-sm">Buenos Deseos</h2>
+    <h2 class="heading-sm">Déjanos un Mensaje</h2>
     <div class="orn" style="margin-top:14px"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
-    <p class="gift-msg rv" style="margin-top:20px;max-width:340px">Déjanos unas palabras, un consejo o una bendición para nuestra nueva vida juntos. Nos hará muy felices leerte. 💜</p>
-    <a class="wish-btn" href="https://wa.me/15203659403?text=%C2%A1Hola%20Emmanuel%20y%20Sindy!%20Les%20mando%20un%20buen%20deseo%20para%20su%20boda%3A%20" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
-      Enviar un buen deseo
-    </a>
-  </section>
-
-  <!-- SUGERENCIA DE CANCIONES -->
-  <section class="sec rv" style="text-align:center;background:var(--soft)">
-    <span class="eyebrow">Para la Fiesta</span>
-    <h2 class="heading-sm">Sugerencia de Canciones</h2>
-    <div class="orn" style="margin-top:14px"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
-    <p class="gift-msg rv" style="margin-top:20px;max-width:340px">¿Qué canción no puede faltar para que bailes con nosotros toda la noche? Ayúdanos a armar la playlist perfecta.</p>
-    <a class="wish-btn" href="https://wa.me/15203659403?text=%C2%A1Hola!%20Mi%20sugerencia%20de%20canci%C3%B3n%20para%20la%20boda%20de%20Emmanuel%20y%20Sindy%20es%3A%20" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/></svg>
-      Sugerir una canción
-    </a>
+    <div class="msg-toggle rv">
+      <button class="msg-tab active" type="button" onclick="setMsgTipo(this,'deseo')">Buen deseo</button>
+      <button class="msg-tab" type="button" onclick="setMsgTipo(this,'cancion')">Sugerir canción</button>
+    </div>
+    <p class="msg-hint" id="msgHint">Unas palabras, un consejo o una bendición para nuestra nueva vida juntos.</p>
+    <div class="msg-box rv">
+      <input class="msg-input" id="msgNombre" type="text" placeholder="Tu nombre" maxlength="60" autocomplete="off">
+      <textarea class="msg-input msg-area" id="msgTexto" rows="3" placeholder="Escribe aquí tu mensaje…" maxlength="400"></textarea>
+      <button class="wish-btn" type="button" onclick="enviarMensaje()"><span id="msgBtnTxt">Enviar</span></button>
+      <p id="msg-feedback"></p>
+    </div>
   </section>
 
   <!-- BANDA FOTOGRÁFICA 2 -->
@@ -1099,6 +1124,39 @@ gsap.registerPlugin(ScrollTrigger);
   };
 })();
 
+/* ── Mensajes: buen deseo / sugerencia de canción ── */
+window.__msgTipo='deseo';
+function setMsgTipo(btn,tipo){
+  window.__msgTipo=tipo;
+  document.querySelectorAll('.msg-tab').forEach(function(t){t.classList.remove('active');});
+  btn.classList.add('active');
+  var hint=document.getElementById('msgHint'), area=document.getElementById('msgTexto');
+  if(tipo==='deseo'){
+    hint.textContent='Unas palabras, un consejo o una bendición para nuestra nueva vida juntos.';
+    area.placeholder='Escribe aquí tu mensaje…';
+  }else{
+    hint.textContent='¿Qué canción no puede faltar para que bailes con nosotros toda la noche?';
+    area.placeholder='Nombre de la canción y artista…';
+  }
+}
+function enviarMensaje(){
+  var WA='15203659403';
+  var nombre=(document.getElementById('msgNombre').value||'').trim();
+  var texto=(document.getElementById('msgTexto').value||'').trim();
+  var fe=document.getElementById('msg-feedback');
+  if(!texto){
+    if(fe){fe.style.display='block';fe.style.color='#9a3a5a';fe.textContent='Escribe tu mensaje antes de enviar.';}
+    document.getElementById('msgTexto').focus();
+    return;
+  }
+  var msg = window.__msgTipo==='deseo'
+    ? '¡Hola Emmanuel y Sindy! Les mando un buen deseo para su boda: '+texto
+    : '¡Hola! Mi sugerencia de canción para la boda de Emmanuel y Sindy es: '+texto;
+  if(nombre) msg += '\n— '+nombre;
+  window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank');
+  if(fe){fe.style.display='block';fe.style.color='var(--orquidea)';fe.textContent='¡Gracias! Se abrió WhatsApp para enviar tu mensaje.';}
+}
+
 /* ── Gift toggle ── */
 function showGift(btn,panel){
   document.querySelectorAll('.gift-tab').forEach(function(t){t.classList.remove('active');});
@@ -1159,7 +1217,7 @@ function initEnvelope(){
 function spawnGoldSpeck(container,seed){
   var d=document.createElement('div');d.className='petal';
   var sz=1.6+Math.random()*2.6;
-  var golds=['rgba(212,197,178,','rgba(158,125,80,','rgba(187,161,128,'];
+  var golds=['rgba(212,197,178,','rgba(158,125,80,','rgba(187,161,128,','rgba(180,138,160,','rgba(141,69,115,','rgba(209,175,167,','rgba(125,71,113,'];
   var c=golds[Math.floor(Math.random()*golds.length)];
   var op=(0.2+Math.random()*0.28).toFixed(2);
   d.style.cssText='left:'+(Math.random()*100)+'%;width:'+sz+'px;height:'+sz+'px;background:'+c+op+');border-radius:50%;position:absolute;top:0;box-shadow:0 0 '+(sz+2)+'px '+c+'0.28)';
