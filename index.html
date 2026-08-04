@@ -257,6 +257,10 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 .dc-fig img{height:215px;width:auto;max-width:100%;object-fit:contain}
 .dc-fig-ttl{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);line-height:1}
 .dc-fig-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:var(--lila-osc);opacity:.95;margin-top:-8px}
+.dc-code{display:inline-flex;flex-direction:column;align-items:center;gap:2px;margin:4px auto 18px;padding:12px 30px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:linear-gradient(rgba(141,69,115,.05),rgba(141,69,115,.05))}
+.dc-code-lbl{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:12.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--lila-osc)}
+.dc-code-val{font-family:'Pinyon Script',cursive;font-size:34px;line-height:1.1;background:var(--gold-grad);background-size:220% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#9e7d50;animation:goldFlow 7s ease-in-out infinite}
+.dc-body{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:500;color:var(--text);opacity:.9;line-height:1.75;max-width:340px;margin:0 auto 14px}
 .dc-avoid-wrap{margin-top:8px;padding-top:24px;border-top:1px solid rgba(158,125,80,.18);max-width:340px;margin-left:auto;margin-right:auto}
 .dc-avoid-lbl{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);text-align:center;display:block;margin-bottom:18px}
 .dc-avoid-row{display:flex;justify-content:center;gap:18px;margin-bottom:18px;flex-wrap:wrap}
@@ -276,7 +280,7 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 .no-kids svg{width:18px;height:18px;flex-shrink:0;margin-top:3px;stroke:var(--gold);stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
 
 /* ── GALERÍA RUEDA 3D ── */
-#galeria{padding:72px 28px 84px;text-align:center;overflow:hidden;background:var(--bg)}
+#galeria{padding:72px 28px 84px;text-align:center;overflow:hidden;background:var(--soft2)}
 .wheel-scene{position:relative;width:100%;height:420px;margin:36px auto 0;perspective:1300px;transform-style:preserve-3d;overflow:visible}
 .wheel-ring{position:absolute;width:100%;height:100%;transform-style:preserve-3d;cursor:grab}
 .wheel-ring.dragging{cursor:grabbing}
@@ -297,7 +301,7 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 .photo-band-eyebrow{position:absolute;top:30px;left:0;right:0;text-align:center;font-family:'Italiana',serif;font-size:12px;letter-spacing:.42em;text-transform:uppercase;color:rgba(212,197,178,.92);text-shadow:0 1px 8px rgba(0,0,0,.6);z-index:2}
 
 /* ── REGALOS ── */
-#regalos{background:var(--soft2);overflow:hidden}
+#regalos{background:var(--bg);overflow:hidden}
 #regalos::after{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 80% 50% at 50% 12%,rgba(158,125,80,.07) 0%,transparent 70%)}
 .gift-icon-wrap{display:flex;justify-content:center;margin:8px 0 22px}
 .gift-icon-wrap svg{opacity:.9;filter:drop-shadow(0 2px 10px rgba(158,125,80,.3))}
@@ -323,6 +327,8 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 .gift-envelope-wrap{text-align:center;padding:24px 12px}
 .gift-envelope-svg{display:block;margin:0 auto 18px;filter:drop-shadow(0 6px 18px rgba(158,125,80,.22))}
 .gift-envelope-txt{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--text);line-height:1.85;max-width:280px;margin:0 auto}
+.gift-buzon{display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding:12px 22px;border:1px solid var(--border);border-radius:50px;background:rgba(141,69,115,.07);font-family:'Cormorant Garamond',serif;font-weight:700;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--lila-osc);line-height:1.4}
+.gift-buzon svg{flex-shrink:0;opacity:.8}
 
 /* ── ÁLBUM ── */
 #album{background:var(--bg);overflow:hidden}
@@ -447,6 +453,7 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 .clima-temp{display:flex;flex-direction:column;align-items:center}
 .clima-t-val{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:42px;color:var(--gold);line-height:1}
 .clima-t-lbl{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:14px;color:var(--lila-osc);opacity:.92;margin-top:4px}
+.clima-t-val small{font-size:.5em;font-weight:600;letter-spacing:.04em;vertical-align:super;margin-left:1px;opacity:.85}
 .clima-sep{width:1px;height:46px;background:linear-gradient(to bottom,transparent,var(--malva),transparent)}
 .clima-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--text);opacity:.88;margin-top:10px;line-height:1.6}
 .clima-note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13.5px;color:var(--lila-osc);opacity:.8;margin-top:8px;line-height:1.5}
@@ -511,7 +518,6 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
       <span class="scroll-hint-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
     </div>
   </section>
-
   <!-- INTRO -->
   <section class="sec rv intro-card" style="text-align:center;overflow:hidden">
     <span class="intro-corner ic-tl"><svg viewBox="0 0 90 90" fill="none" aria-hidden="true"><path d="M7 7 C26 19 41 29 57 30" stroke="#bba180" stroke-width="1" opacity=".5"/><path d="M7 7 C19 26 29 41 30 57" stroke="#bba180" stroke-width="1" opacity=".5"/><path d="M30 21 q9 -7 18 -3 q-7 8 -18 3Z" fill="#bba180" opacity=".22"/><path d="M45 26 q9 -6 17 -1 q-8 8 -17 1Z" fill="#bba180" opacity=".18"/><path d="M21 30 q-7 9 -3 18 q8 -7 3 -18Z" fill="#bba180" opacity=".22"/><path d="M26 45 q-6 9 -1 17 q8 -8 1 -17Z" fill="#bba180" opacity=".18"/><g transform="translate(12,12)" stroke="#bba180" stroke-width="1" opacity=".6" fill="none"><ellipse cx="0" cy="-7.5" rx="3" ry="6.5"/><ellipse cx="0" cy="-7.5" rx="3" ry="6.5" transform="rotate(72)"/><ellipse cx="0" cy="-7.5" rx="3" ry="6.5" transform="rotate(144)"/><ellipse cx="0" cy="-7.5" rx="3" ry="6.5" transform="rotate(216)"/><ellipse cx="0" cy="-7.5" rx="3" ry="6.5" transform="rotate(288)"/><circle cx="0" cy="0" r="2" fill="#bba180"/></g></svg></span>
@@ -530,7 +536,6 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
       <p class="invite-verse-end" style="margin-top:12px;font-style:italic;font-size:14px;letter-spacing:.06em;color:var(--gold)">— Eclesiastés 3, 1</p>
     </div>
   </section>
-
   <!-- BANDA FOTOGRÁFICA 1 -->
   <div class="photo-band rv">
     <img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/581b4bca-7a10-44ad-929d-4f5b42fa6db4/1780197645674-0.jpeg" alt="Emmanuel y Sindy" loading="lazy" style="object-position:center 20%">
@@ -539,7 +544,6 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
     <span class="photo-band-eyebrow">Nuestra Historia</span>
     <span class="photo-band-quote">Y al fin, para siempre</span>
   </div>
-
   <!-- CUENTA REGRESIVA -->
   <section class="sec-sm rv" style="text-align:center;background:var(--soft2)">
     <span class="eyebrow">Faltan</span>
@@ -559,7 +563,6 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
     </div>
     <span class="cd-para">Para el Gran Día</span>
   </section>
-
   <!-- FAMILIAS -->
   <section class="sec rv" style="text-align:center;overflow:hidden">
     <span class="eyebrow">Con la bendición de</span>
@@ -596,13 +599,43 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
         <path d="M2 11 Q14 3 27 11 Q40 19 52 11" stroke="var(--lila-osc)" stroke-width="1" opacity=".7" fill="none"/>
         <circle cx="27" cy="11" r="2.6" fill="var(--orquidea)" opacity=".8"/>
       </svg>
+      <span class="fam-role-lbl" style="margin-bottom:10px">Nuestros Hijos</span>
+      <span class="fam-name">Yael Emmanuel Pelayo Macias</span>
+      <div class="fam-and" style="max-width:180px;margin:8px auto"><div class="fam-and-line"></div><span class="fam-and-txt">y</span><div class="fam-and-line"></div></div>
+      <span class="fam-name">Brianna Yesenia Pelayo Macias</span>
+    </div>
+
+    <div class="padrinos-card rv">
+      <svg class="padrinos-orn" width="54" height="22" viewBox="0 0 54 22" fill="none" aria-hidden="true">
+        <path d="M2 11 Q14 3 27 11 Q40 19 52 11" stroke="var(--lila-osc)" stroke-width="1" opacity=".7" fill="none"/>
+        <circle cx="27" cy="11" r="2.6" fill="var(--orquidea)" opacity=".8"/>
+      </svg>
       <span class="fam-role-lbl" style="margin-bottom:10px">Nuestros Padrinos</span>
       <span class="fam-name">José Daniel Navarro Martínez</span>
       <div class="fam-and" style="max-width:180px;margin:8px auto"><div class="fam-and-line"></div><span class="fam-and-txt">y</span><div class="fam-and-line"></div></div>
       <span class="fam-name">Lupita Wilson de Navarro</span>
     </div>
   </section>
-
+  <!-- GALERÍA -->
+  <section id="galeria">
+    <span class="eyebrow">Nosotros</span>
+    <h2 class="heading-sm">Nuestra Historia</h2>
+    <div class="orn" style="margin-top:16px"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
+    <p class="gal-quote rv">Cada imagen, un capítulo de nuestra historia de amor.</p>
+    <div class="wheel-scene rv" id="wheel-scene">
+      <div class="wheel-ring" id="wheel-ring">
+        <div class="wheel-card"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/581b4bca-7a10-44ad-929d-4f5b42fa6db4/1780197616122-4.jpeg" alt="Emmanuel y Sindy" loading="lazy"></div>
+        <div class="wheel-card"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/581b4bca-7a10-44ad-929d-4f5b42fa6db4/1780197628354-0.jpeg" alt="Emmanuel y Sindy" loading="lazy"></div>
+        <div class="wheel-card"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/581b4bca-7a10-44ad-929d-4f5b42fa6db4/1780197639806-0.jpeg" alt="Emmanuel y Sindy" loading="lazy"></div>
+        <div class="wheel-card"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/581b4bca-7a10-44ad-929d-4f5b42fa6db4/1780197645674-0.jpeg" alt="Emmanuel y Sindy" loading="lazy"></div>
+        <div class="wheel-card"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/581b4bca-7a10-44ad-929d-4f5b42fa6db4/1780197659100-0.jpeg" alt="Emmanuel y Sindy" loading="lazy"></div>
+        <div class="wheel-card"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/581b4bca-7a10-44ad-929d-4f5b42fa6db4/1780197616122-4.jpeg" alt="Emmanuel y Sindy" loading="lazy"></div>
+        <div class="wheel-card"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/581b4bca-7a10-44ad-929d-4f5b42fa6db4/1780197628354-0.jpeg" alt="Emmanuel y Sindy" loading="lazy"></div>
+        <div class="wheel-card"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/581b4bca-7a10-44ad-929d-4f5b42fa6db4/1780197639806-0.jpeg" alt="Emmanuel y Sindy" loading="lazy"></div>
+      </div>
+    </div>
+    <p class="gal-hint rv">Arrastra para girar</p>
+  </section>
   <!-- UBICACIÓN -->
   <section class="sec rv" style="text-align:center;background:var(--soft)">
     <div class="loc-pin rv">
@@ -637,7 +670,7 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
       <p class="loc-addr">45 Strong St<br>Brighton, Colorado</p>
       <div class="loc-row" style="margin-top:14px;border-top:1px solid var(--border-light);border-bottom:none;padding-top:14px">
         <svg class="loc-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        <div class="loc-txt"><span style="display:block;font-family:'Italiana',serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:2px">Cóctel</span><strong>6:00 p.m.</strong></div>
+        <div class="loc-txt"><span style="display:block;font-family:'Italiana',serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:2px">Cóctel de bienvenida</span><strong>5:00 p.m.</strong></div>
       </div>
       <a href="https://maps.app.goo.gl/CPM8romLSqiW5v2Y8" target="_blank" rel="noopener" class="btn-map" style="margin-top:14px">
         <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
@@ -646,13 +679,12 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
     </div>
 
     <div class="cal-row rv" style="margin-top:22px">
-      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Emmanuel+%26+Sindy&dates=20260925T200000Z/20260926T040000Z&details=Ceremonia+Religiosa+2%3A00+PM+%7C+C%C3%B3ctel+de+Recepci%C3%B3n+6%3A00+PM" target="_blank" rel="noopener" class="btn-cal">
+      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Emmanuel+%26+Sindy&dates=20260925T200000Z/20260926T050000Z&details=Ceremonia+Religiosa+2%3A00+PM+Nuestra+Se%C3%B1ora+Madre+de+la+Iglesia+%7C+C%C3%B3ctel+5%3A00+PM+y+Recepci%C3%B3n+6%3A00+PM+Bella+Sera+Event+Center" target="_blank" rel="noopener" class="btn-cal">
         <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5C3.89 4 3 4.9 3 6v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v10zM7 11h5v5H7z"/></svg>
         Guardar en Calendario
       </a>
     </div>
   </section>
-
   <!-- ITINERARIO -->
   <section id="itinerario" class="sec rv" style="text-align:center;overflow:hidden">
     <span class="eyebrow stagger-child">El Programa del Día</span>
@@ -665,45 +697,38 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
       </svg>
       <div class="tl-row" data-side="left">
         <div class="tl-orn"></div><div class="tl-pulse"></div><div class="tl-dot"></div>
-        <div class="tl-row-inner"><p class="tl-t">2:00 PM</p><p class="tl-ev">Ceremonia Religiosa</p><p class="tl-de">Our Lady Mother of the Church</p></div>
+        <div class="tl-row-inner"><p class="tl-t">2:00 PM</p><p class="tl-ev">Ceremonia Religiosa</p><p class="tl-de">Nuestra Señora Madre de la Iglesia — la ceremonia dará inicio puntualmente. Será un honor contar con tu presencia desde este momento tan especial.</p></div>
       </div>
       <div class="tl-row" data-side="right">
         <div class="tl-orn"></div><div class="tl-pulse"></div><div class="tl-dot"></div>
-        <div class="tl-row-inner"><p class="tl-t">6:00 PM</p><p class="tl-ev">Cóctel</p><p class="tl-de">Bella Sera Event Center</p></div>
+        <div class="tl-row-inner"><p class="tl-t">5:00 PM</p><p class="tl-ev">Cóctel de Bienvenida</p><p class="tl-de">Bella Sera Event Center — la celebración comienza desde tu llegada. Te invitamos a acompañarnos desde el inicio para vivir cada momento especial que hemos preparado.</p></div>
+      </div>
+      <div class="tl-row" data-side="left">
+        <div class="tl-orn"></div><div class="tl-pulse"></div><div class="tl-dot"></div>
+        <div class="tl-row-inner"><p class="tl-t">6:00 PM</p><p class="tl-ev">Recepción</p><p class="tl-de">Un momento por descubrir</p></div>
+      </div>
+      <div class="tl-row" data-side="right">
+        <div class="tl-orn"></div><div class="tl-pulse"></div><div class="tl-dot"></div>
+        <div class="tl-row-inner"><p class="tl-t">6:20 PM</p><p class="tl-ev">Cena</p></div>
+      </div>
+      <div class="tl-row" data-side="left">
+        <div class="tl-orn"></div><div class="tl-pulse"></div><div class="tl-dot"></div>
+        <div class="tl-row-inner"><p class="tl-t">7:30 PM</p><p class="tl-ev">Pastel y Brindis</p></div>
+      </div>
+      <div class="tl-row" data-side="right">
+        <div class="tl-orn"></div><div class="tl-pulse"></div><div class="tl-dot"></div>
+        <div class="tl-row-inner"><p class="tl-t">8:00 PM</p><p class="tl-ev">Baile de los Novios</p></div>
+      </div>
+      <div class="tl-row" data-side="left">
+        <div class="tl-orn"></div><div class="tl-pulse"></div><div class="tl-dot"></div>
+        <div class="tl-row-inner"><p class="tl-t">8:30 PM</p><p class="tl-ev">¡A Celebrar!</p></div>
+      </div>
+      <div class="tl-row" data-side="right">
+        <div class="tl-orn"></div><div class="tl-pulse"></div><div class="tl-dot"></div>
+        <div class="tl-row-inner"><p class="tl-t">11:00 PM</p><p class="tl-ev">Fin de la Velada</p><p class="tl-de">¡Gracias por acompañarnos!</p></div>
       </div>
     </div>
   </section>
-
-  <!-- EL CLIMA ESE DÍA -->
-  <section class="sec-sm rv" style="text-align:center;background:var(--soft3)">
-    <span class="eyebrow">Para que lo tomes en cuenta</span>
-    <h2 class="heading-sm">El Clima ese Día</h2>
-    <div class="orn" style="margin-top:14px"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
-    <div class="clima-card rv">
-      <svg class="clima-icon" width="64" height="54" viewBox="0 0 72 60" fill="none" aria-hidden="true">
-        <g stroke="#9e7d50" stroke-width="1.6" stroke-linecap="round">
-          <circle cx="24" cy="20" r="9" fill="rgba(158,125,80,.10)"/>
-          <line x1="24" y1="4" x2="24" y2="9"/><line x1="24" y1="31" x2="24" y2="34"/>
-          <line x1="8" y1="20" x2="12" y2="20"/><line x1="38" y1="20" x2="40" y2="20"/>
-          <line x1="12.5" y1="8.5" x2="15.5" y2="11.5"/><line x1="32.5" y1="28.5" x2="35" y2="31"/>
-          <line x1="12.5" y1="31.5" x2="15.5" y2="28.5"/><line x1="33" y1="9" x2="35.5" y2="6.5"/>
-        </g>
-        <path d="M31 50 C25 50 25 41 32 40 C33 32 44 30 48 36 C55 33 62 38 60 44 C64 45 63 50 58 50 Z" fill="rgba(212,197,178,.28)" stroke="#9e7d50" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
-      </svg>
-      <div class="clima-temps">
-        <div class="clima-temp"><span class="clima-t-val">24°</span><span class="clima-t-lbl">Máxima</span></div>
-        <div class="clima-sep"></div>
-        <div class="clima-temp"><span class="clima-t-val">10°</span><span class="clima-t-lbl">Mínima</span></div>
-      </div>
-      <p class="clima-desc">Otoño en Colorado — días templados y noches frescas.</p>
-      <p class="clima-note">Clima aproximado para la temporada. Te sugerimos llevar una capa extra para la noche.</p>
-      <a href="https://www.google.com/search?q=clima+en+Brighton%2C+Colorado" target="_blank" rel="noopener" class="clima-btn">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 19a4.5 4.5 0 0 1-.5-8.97A6 6 0 0 1 17.7 9.2 3.9 3.9 0 0 1 17.5 19h-11z"/></svg>
-        Ver pronóstico del día
-      </a>
-    </div>
-  </section>
-
   <!-- DRESS CODE -->
   <section class="sec rv" style="text-align:center;background:var(--soft2)">
     <span class="eyebrow">Código de Vestimenta</span>
@@ -712,16 +737,23 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 
     <div class="dc-figs rv">
       <div class="dc-fig">
-        <img src="caballero.png" alt="Caballero de etiqueta — traje formal negro" loading="lazy">
+        <img src="caballero.png" alt="Caballero con traje formal" loading="lazy">
         <span class="dc-fig-ttl">Caballeros</span>
-        <span class="dc-fig-sub">Esmoquin o traje</span>
+        <span class="dc-fig-sub">Traje formal</span>
       </div>
       <div class="dc-fig">
-        <img src="dama.png" alt="Dama de gala — vestido largo" loading="lazy">
+        <img src="dama.png" alt="Dama con vestido formal" loading="lazy">
         <span class="dc-fig-ttl">Damas</span>
-        <span class="dc-fig-sub">Vestido largo de gala</span>
+        <span class="dc-fig-sub">Vestido formal</span>
       </div>
     </div>
+
+    <div class="dc-code rv">
+      <span class="dc-code-lbl">Dress Code</span>
+      <span class="dc-code-val">Formal</span>
+    </div>
+    <p class="dc-body rv">Queremos verlos radiantes, con un look perfecto para una noche de celebración. No es necesario usar esmoquin o vestido de gala; simplemente los invitamos a vestir con estilo y de manera cómoda, acorde con la ocasión.</p>
+    <p class="dc-body rv">La mejor etiqueta será su sonrisa; elijan un atuendo con el que se sientan ustedes mismos. Lo más importante es que disfruten de esta noche tan especial junto a nosotros.</p>
 
     <div class="dc-avoid-wrap rv">
       <div class="dc-avoid-head">
@@ -730,53 +762,18 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
       </div>
       <p class="dc-avoid-clarify">Estos <u>no</u> son colores sugeridos. Con cariño, te pedimos <strong>no</strong> usarlos en tu vestuario.</p>
       <div class="dc-avoid-row">
-        <div class="dc-avoid-sw"><div class="dc-avoid-circle x" style="background:#FFFFFF;border:1px solid #ddd"></div><span class="dc-avoid-name">Blanco</span></div>
-        <div class="dc-avoid-sw"><div class="dc-avoid-circle x" style="background:#fffaee;border:1px solid #e6e0d2"></div><span class="dc-avoid-name">Off-white</span></div>
-        <div class="dc-avoid-sw"><div class="dc-avoid-circle x" style="background:#fff2d5"></div><span class="dc-avoid-name">Crema</span></div>
+        <div class="dc-avoid-sw"><div class="dc-avoid-circle x" style="background:#FFFFFF;border:1px solid #ddd"></div><span class="dc-avoid-name">Blanco total</span></div>
+        <div class="dc-avoid-sw"><div class="dc-avoid-circle x" style="background:linear-gradient(135deg,#39FF14 0%,#FF00FF 50%,#00FFFF 100%)"></div><span class="dc-avoid-name">Colores neón</span></div>
+        <div class="dc-avoid-sw"><div class="dc-avoid-circle x" style="background:#e22400"></div><span class="dc-avoid-name">Rojo</span></div>
       </div>
       <p class="dc-avoid-msg">El blanco está reservado para la novia.</p>
     </div>
   </section>
-
-  <!-- GALERÍA -->
-  <section id="galeria">
-    <span class="eyebrow">Nosotros</span>
-    <h2 class="heading-sm">Nuestra Historia</h2>
-    <div class="orn" style="margin-top:16px"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
-    <p class="gal-quote rv">Cada imagen, un capítulo de nuestra historia de amor.</p>
-    <div class="wheel-scene rv" id="wheel-scene">
-      <div class="wheel-ring" id="wheel-ring">
-        <div class="wheel-card"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/581b4bca-7a10-44ad-929d-4f5b42fa6db4/1780197616122-4.jpeg" alt="Emmanuel y Sindy" loading="lazy"></div>
-        <div class="wheel-card"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/581b4bca-7a10-44ad-929d-4f5b42fa6db4/1780197628354-0.jpeg" alt="Emmanuel y Sindy" loading="lazy"></div>
-        <div class="wheel-card"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/581b4bca-7a10-44ad-929d-4f5b42fa6db4/1780197639806-0.jpeg" alt="Emmanuel y Sindy" loading="lazy"></div>
-        <div class="wheel-card"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/581b4bca-7a10-44ad-929d-4f5b42fa6db4/1780197645674-0.jpeg" alt="Emmanuel y Sindy" loading="lazy"></div>
-        <div class="wheel-card"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/581b4bca-7a10-44ad-929d-4f5b42fa6db4/1780197659100-0.jpeg" alt="Emmanuel y Sindy" loading="lazy"></div>
-        <div class="wheel-card"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/581b4bca-7a10-44ad-929d-4f5b42fa6db4/1780197616122-4.jpeg" alt="Emmanuel y Sindy" loading="lazy"></div>
-        <div class="wheel-card"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/581b4bca-7a10-44ad-929d-4f5b42fa6db4/1780197628354-0.jpeg" alt="Emmanuel y Sindy" loading="lazy"></div>
-        <div class="wheel-card"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/581b4bca-7a10-44ad-929d-4f5b42fa6db4/1780197639806-0.jpeg" alt="Emmanuel y Sindy" loading="lazy"></div>
-      </div>
-    </div>
-    <p class="gal-hint rv">Arrastra para girar</p>
-  </section>
-
   <!-- MESA DE REGALOS -->
   <section id="regalos" class="sec rv" style="text-align:center">
-    <span class="eyebrow">Mesa de Regalos</span>
-    <h2 class="heading">Un Obsequio</h2>
+    <span class="eyebrow">Un Gesto de Amor</span>
+    <h2 class="heading">Obsequio</h2>
     <div class="orn" style="margin-top:14px;margin-bottom:0"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
-    <div class="gift-icon-wrap rv">
-      <svg viewBox="0 0 72 64" width="68" height="60" fill="none" aria-hidden="true">
-        <path d="M36 16 C32 5 20 1 16 8 C12 14 19 21 31 17 C33.5 16.2 36 16 36 16Z" fill="rgba(158,125,80,.1)" stroke="#9e7d50" stroke-width="1.4" stroke-linejoin="round"/>
-        <path d="M36 16 C40 5 52 1 56 8 C60 14 53 21 41 17 C38.5 16.2 36 16 36 16Z" fill="rgba(158,125,80,.1)" stroke="#9e7d50" stroke-width="1.4" stroke-linejoin="round"/>
-        <ellipse cx="36" cy="16" rx="4.5" ry="3.5" fill="rgba(158,125,80,.28)" stroke="#9e7d50" stroke-width="1"/>
-        <rect x="6" y="16" width="60" height="13" rx="2" fill="rgba(158,125,80,.08)" stroke="#9e7d50" stroke-width="1.3"/>
-        <rect x="33" y="16" width="6" height="13" fill="rgba(158,125,80,.2)"/>
-        <rect x="10" y="29" width="52" height="34" rx="2" fill="rgba(158,125,80,.05)" stroke="#9e7d50" stroke-width="1.3"/>
-        <line x1="36" y1="29" x2="36" y2="63" stroke="#9e7d50" stroke-width="1.3" opacity=".55"/>
-        <line x1="10" y1="46" x2="62" y2="46" stroke="#9e7d50" stroke-width=".9" opacity=".32"/>
-      </svg>
-    </div>
-    <p class="gift-msg rv">Tu presencia es nuestro regalo más preciado. Si deseas obsequiarnos algo, con cariño te ofrecemos estas opciones.</p>
 
     <div class="gift-panel show" id="gift-sobres">
       <div class="gift-envelope-wrap">
@@ -788,82 +785,14 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
           <ellipse cx="45" cy="8" rx="10" ry="5" fill="rgba(158,125,80,.14)" stroke="#9e7d50" stroke-width=".8"/>
           <text x="45" y="11" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="7" fill="#9e7d50" opacity=".8">E &amp; S</text>
         </svg>
-        <p class="gift-envelope-txt">Lluvia de sobres — tu sobre es el regalo más hermoso que puedes traer. Muchas gracias por tu generosidad y amor.</p>
+        <p class="gift-envelope-txt">Tu presencia es el regalo más importante. Si deseas hacernos un obsequio, agradecemos los sobres con efectivo el día de la celebración.</p>
+        <div class="gift-buzon">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M20 6h-8l-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2z"/></svg>
+          Habrá un buzón especial en la recepción
+        </div>
       </div>
     </div>
   </section>
-
-  <!-- ÁLBUM COMPARTIDO -->
-  <section id="album" class="sec rv" style="text-align:center">
-    <span class="eyebrow">Comparte el Momento</span>
-    <h2 class="heading-sm">Álbum Compartido</h2>
-    <div class="orn" style="margin-top:14px;margin-bottom:0"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
-    <div class="album-icon-wrap rv">
-      <svg viewBox="0 0 64 50" width="60" height="47" fill="none" aria-hidden="true">
-        <rect x="2" y="12" width="60" height="36" rx="4" fill="rgba(158,125,80,.05)" stroke="#9e7d50" stroke-width="1.3"/>
-        <rect x="20" y="6" width="14" height="8" rx="2" fill="rgba(158,125,80,.05)" stroke="#9e7d50" stroke-width="1.2"/>
-        <circle cx="32" cy="30" r="13" fill="rgba(158,125,80,.05)" stroke="#9e7d50" stroke-width="1.3"/>
-        <circle cx="32" cy="30" r="8.5" fill="rgba(158,125,80,.06)" stroke="#9e7d50" stroke-width="1" opacity=".8"/>
-        <circle cx="32" cy="30" r="3.5" fill="rgba(158,125,80,.18)" stroke="#9e7d50" stroke-width=".8" opacity=".7"/>
-        <circle cx="53" cy="20" r="2.4" fill="rgba(158,125,80,.18)" stroke="#9e7d50" stroke-width=".9"/>
-      </svg>
-    </div>
-    <p class="gift-msg rv" style="margin-top:4px;max-width:320px">Escanea el código y comparte tus fotos y videos del gran día — será nuestro recuerdo colectivo.</p>
-    <!-- PENDIENTE: link álbum real + regenerar QR -->
-    <div class="qr-premium rv">
-      <div class="qr-outer">
-        <div class="qr-c tl"></div><div class="qr-c tr"></div><div class="qr-c bl"></div><div class="qr-c br"></div>
-        <img class="qr-img" src="qr-album.png" alt="Código QR para el álbum de Emmanuel y Sindy" loading="lazy">
-      </div>
-      <span class="qr-scan-lbl">Escanea para abrir el álbum</span>
-      <span class="qr-note">El enlace estará disponible muy pronto</span>
-    </div>
-  </section>
-
-  <!-- HASHTAG -->
-  <section class="sec-sm rv" style="text-align:center;background:var(--soft3)">
-    <span class="eyebrow">En Redes Sociales</span>
-    <h2 class="heading-sm">Nuestro Hashtag</h2>
-    <div class="orn" style="margin-top:14px"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
-    <div class="hashtag-box rv">
-      <svg width="46" height="40" viewBox="0 0 64 54" fill="none" aria-hidden="true">
-        <rect x="3" y="12" width="58" height="39" rx="5" fill="rgba(158,125,80,.05)" stroke="#9e7d50" stroke-width="1.5"/>
-        <path d="M22 12 l4-7h12l4 7" fill="none" stroke="#9e7d50" stroke-width="1.5" stroke-linejoin="round"/>
-        <circle cx="32" cy="31" r="11" fill="rgba(158,125,80,.05)" stroke="#9e7d50" stroke-width="1.5"/>
-        <circle cx="32" cy="31" r="5.5" fill="rgba(212,197,178,.3)" stroke="#9e7d50" stroke-width="1.2"/>
-        <circle cx="52" cy="20" r="2.2" fill="#9e7d50"/>
-      </svg>
-      <p class="hashtag-tag">#EmmanuelYSindy</p>
-      <p class="hashtag-msg">Comparte tus fotos y videos del gran día en Facebook e Instagram usando nuestro hashtag. ¡Queremos revivirlo todo contigo!</p>
-    </div>
-  </section>
-
-  <!-- MENSAJES: BUENOS DESEOS + CANCIONES -->
-  <section class="sec rv" style="text-align:center">
-    <span class="eyebrow">Con Cariño</span>
-    <h2 class="heading-sm">Déjanos un Mensaje</h2>
-    <div class="orn" style="margin-top:14px"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
-    <div class="msg-toggle rv">
-      <button class="msg-tab active" type="button" onclick="setMsgTipo(this,'deseo')">Buen deseo</button>
-      <button class="msg-tab" type="button" onclick="setMsgTipo(this,'cancion')">Sugerir canción</button>
-    </div>
-    <p class="msg-hint" id="msgHint">Unas palabras, un consejo o una bendición para nuestra nueva vida juntos.</p>
-    <div class="msg-box rv">
-      <input class="msg-input" id="msgNombre" type="text" placeholder="Tu nombre" maxlength="60" autocomplete="off">
-      <textarea class="msg-input msg-area" id="msgTexto" rows="3" placeholder="Escribe aquí tu mensaje…" maxlength="400"></textarea>
-      <button class="wish-btn" type="button" onclick="enviarMensaje()"><span id="msgBtnTxt">Enviar</span></button>
-      <p id="msg-feedback"></p>
-    </div>
-  </section>
-
-  <!-- BANDA FOTOGRÁFICA 2 -->
-  <div class="photo-band rv">
-    <img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/581b4bca-7a10-44ad-929d-4f5b42fa6db4/1780197639806-0.jpeg" alt="Emmanuel y Sindy bailando" loading="lazy" style="object-position:center 30%">
-    <div class="photo-band-veil"></div>
-    <div class="photo-band-frame"></div>
-    <span class="photo-band-quote">Nos vemos en el altar</span>
-  </div>
-
   <!-- RSVP -->
   <section class="sec rv" id="rsvp" style="text-align:center;background:var(--soft)">
     <span class="eyebrow">Confirmación de Asistencia</span>
@@ -918,7 +847,102 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
       </div>
     </div>
   </section>
-
+  <!-- EL CLIMA ESE DÍA -->
+  <section class="sec-sm rv" style="text-align:center;background:var(--soft2)">
+    <span class="eyebrow">Para que lo tomes en cuenta</span>
+    <h2 class="heading-sm">El Clima ese Día</h2>
+    <div class="orn" style="margin-top:14px"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
+    <div class="clima-card rv">
+      <svg class="clima-icon" width="64" height="54" viewBox="0 0 72 60" fill="none" aria-hidden="true">
+        <g stroke="#9e7d50" stroke-width="1.6" stroke-linecap="round">
+          <circle cx="24" cy="20" r="9" fill="rgba(158,125,80,.10)"/>
+          <line x1="24" y1="4" x2="24" y2="9"/><line x1="24" y1="31" x2="24" y2="34"/>
+          <line x1="8" y1="20" x2="12" y2="20"/><line x1="38" y1="20" x2="40" y2="20"/>
+          <line x1="12.5" y1="8.5" x2="15.5" y2="11.5"/><line x1="32.5" y1="28.5" x2="35" y2="31"/>
+          <line x1="12.5" y1="31.5" x2="15.5" y2="28.5"/><line x1="33" y1="9" x2="35.5" y2="6.5"/>
+        </g>
+        <path d="M31 50 C25 50 25 41 32 40 C33 32 44 30 48 36 C55 33 62 38 60 44 C64 45 63 50 58 50 Z" fill="rgba(212,197,178,.28)" stroke="#9e7d50" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+      </svg>
+      <div class="clima-temps">
+        <div class="clima-temp"><span class="clima-t-val">75°<small>F</small></span><span class="clima-t-lbl">Máxima</span></div>
+        <div class="clima-sep"></div>
+        <div class="clima-temp"><span class="clima-t-val">50°<small>F</small></span><span class="clima-t-lbl">Mínima</span></div>
+      </div>
+      <p class="clima-desc">Otoño en Colorado — días templados y noches frescas.</p>
+      <p class="clima-note">Clima aproximado para la temporada. Te sugerimos llevar una capa extra para la noche.</p>
+      <a href="https://www.google.com/search?q=weather+Brighton+Colorado" target="_blank" rel="noopener" class="clima-btn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 19a4.5 4.5 0 0 1-.5-8.97A6 6 0 0 1 17.7 9.2 3.9 3.9 0 0 1 17.5 19h-11z"/></svg>
+        Ver pronóstico del día
+      </a>
+    </div>
+  </section>
+  <!-- ÁLBUM COMPARTIDO -->
+  <section id="album" class="sec rv" style="text-align:center">
+    <span class="eyebrow">Comparte el Momento</span>
+    <h2 class="heading-sm">Álbum Compartido</h2>
+    <div class="orn" style="margin-top:14px;margin-bottom:0"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
+    <div class="album-icon-wrap rv">
+      <svg viewBox="0 0 64 50" width="60" height="47" fill="none" aria-hidden="true">
+        <rect x="2" y="12" width="60" height="36" rx="4" fill="rgba(158,125,80,.05)" stroke="#9e7d50" stroke-width="1.3"/>
+        <rect x="20" y="6" width="14" height="8" rx="2" fill="rgba(158,125,80,.05)" stroke="#9e7d50" stroke-width="1.2"/>
+        <circle cx="32" cy="30" r="13" fill="rgba(158,125,80,.05)" stroke="#9e7d50" stroke-width="1.3"/>
+        <circle cx="32" cy="30" r="8.5" fill="rgba(158,125,80,.06)" stroke="#9e7d50" stroke-width="1" opacity=".8"/>
+        <circle cx="32" cy="30" r="3.5" fill="rgba(158,125,80,.18)" stroke="#9e7d50" stroke-width=".8" opacity=".7"/>
+        <circle cx="53" cy="20" r="2.4" fill="rgba(158,125,80,.18)" stroke="#9e7d50" stroke-width=".9"/>
+      </svg>
+    </div>
+    <p class="gift-msg rv" style="margin-top:4px;max-width:320px">Escanea el código y comparte tus fotos y videos del gran día — será nuestro recuerdo colectivo.</p>
+    <!-- PENDIENTE: link álbum real + regenerar QR -->
+    <div class="qr-premium rv">
+      <div class="qr-outer">
+        <div class="qr-c tl"></div><div class="qr-c tr"></div><div class="qr-c bl"></div><div class="qr-c br"></div>
+        <img class="qr-img" src="qr-album.png" alt="Código QR para el álbum de Emmanuel y Sindy" loading="lazy">
+      </div>
+      <span class="qr-scan-lbl">Escanea para abrir el álbum</span>
+      <span class="qr-note">El enlace estará disponible muy pronto</span>
+    </div>
+  </section>
+  <!-- HASHTAG -->
+  <section class="sec-sm rv" style="text-align:center;background:var(--soft3)">
+    <span class="eyebrow">En Redes Sociales</span>
+    <h2 class="heading-sm">Nuestro Hashtag</h2>
+    <div class="orn" style="margin-top:14px"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
+    <div class="hashtag-box rv">
+      <svg width="46" height="40" viewBox="0 0 64 54" fill="none" aria-hidden="true">
+        <rect x="3" y="12" width="58" height="39" rx="5" fill="rgba(158,125,80,.05)" stroke="#9e7d50" stroke-width="1.5"/>
+        <path d="M22 12 l4-7h12l4 7" fill="none" stroke="#9e7d50" stroke-width="1.5" stroke-linejoin="round"/>
+        <circle cx="32" cy="31" r="11" fill="rgba(158,125,80,.05)" stroke="#9e7d50" stroke-width="1.5"/>
+        <circle cx="32" cy="31" r="5.5" fill="rgba(212,197,178,.3)" stroke="#9e7d50" stroke-width="1.2"/>
+        <circle cx="52" cy="20" r="2.2" fill="#9e7d50"/>
+      </svg>
+      <p class="hashtag-tag">#EmmanuelYSindy</p>
+      <p class="hashtag-msg">Comparte tus fotos y videos del gran día en Facebook e Instagram usando nuestro hashtag. ¡Queremos revivirlo todo contigo!</p>
+    </div>
+  </section>
+  <!-- MENSAJES: BUENOS DESEOS + CANCIONES -->
+  <section class="sec rv" style="text-align:center">
+    <span class="eyebrow">Con Cariño</span>
+    <h2 class="heading-sm">Déjanos un Mensaje</h2>
+    <div class="orn" style="margin-top:14px"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
+    <div class="msg-toggle rv">
+      <button class="msg-tab active" type="button" onclick="setMsgTipo(this,'deseo')">Buen deseo</button>
+      <button class="msg-tab" type="button" onclick="setMsgTipo(this,'cancion')">Sugerir canción</button>
+    </div>
+    <p class="msg-hint" id="msgHint">Unas palabras, un consejo o una bendición para nuestra nueva vida juntos.</p>
+    <div class="msg-box rv">
+      <input class="msg-input" id="msgNombre" type="text" placeholder="Tu nombre" maxlength="60" autocomplete="off">
+      <textarea class="msg-input msg-area" id="msgTexto" rows="3" placeholder="Escribe aquí tu mensaje…" maxlength="400"></textarea>
+      <button class="wish-btn" type="button" onclick="enviarMensaje()"><span id="msgBtnTxt">Enviar</span></button>
+      <p id="msg-feedback"></p>
+    </div>
+  </section>
+  <!-- BANDA FOTOGRÁFICA 2 -->
+  <div class="photo-band rv">
+    <img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/581b4bca-7a10-44ad-929d-4f5b42fa6db4/1780197639806-0.jpeg" alt="Emmanuel y Sindy bailando" loading="lazy" style="object-position:center 30%">
+    <div class="photo-band-veil"></div>
+    <div class="photo-band-frame"></div>
+    <span class="photo-band-quote">Nos vemos en el altar</span>
+  </div>
   <!-- FOOTER -->
   <footer id="footer">
     <div class="footer-monogram-wrap rv">
