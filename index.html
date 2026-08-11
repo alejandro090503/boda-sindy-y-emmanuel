@@ -281,15 +281,11 @@ body.det-abierto{overflow:hidden}
 @media(prefers-reduced-motion:reduce){.tl-orn,.tl-pulse,.tl-more-hand{animation:none!important}.tl-row{transition:none!important}}
 
 /* ── DRESS CODE ── */
-.dc-pareja{display:flex;justify-content:center;margin:30px auto 26px}
-.dc-pareja img{display:block;height:clamp(230px,58vw,280px);width:auto;max-width:100%;object-fit:contain;filter:drop-shadow(0 8px 20px rgba(20,16,10,.18))}
 .dc-figs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:32px auto 28px;max-width:340px;position:relative}
 .dc-figs::before{content:'';position:absolute;left:50%;top:14%;bottom:14%;width:1px;background:linear-gradient(to bottom,transparent,rgba(158,125,80,.4),transparent)}
 .dc-fig{display:flex;flex-direction:column;align-items:center;gap:14px;padding:8px 6px;background:transparent}
-.dc-fig svg,.dc-fig img{display:block;filter:drop-shadow(0 6px 16px rgba(20,16,10,.16))}
-.dc-fig img{height:215px;width:auto;max-width:100%;object-fit:contain}
-.dc-fig-ttl{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);line-height:1}
-.dc-fig-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:var(--lila-osc);opacity:.95;margin-top:-8px}
+.dc-fig svg,.dc-fig img{display:block;filter:drop-shadow(0 8px 20px rgba(20,16,10,.18))}
+.dc-fig img{height:clamp(215px,54vw,260px);width:auto;max-width:100%;object-fit:contain}
 .dc-code{display:inline-flex;flex-direction:column;align-items:center;gap:2px;margin:4px auto 18px;padding:12px 30px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:linear-gradient(rgba(141,69,115,.05),rgba(141,69,115,.05))}
 .dc-code-lbl{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:12.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--lila-osc)}
 .dc-code-val{font-family:'Pinyon Script',cursive;font-size:34px;line-height:1.1;background:var(--gold-grad);background-size:220% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#9e7d50;animation:goldFlow 7s ease-in-out infinite}
@@ -789,8 +785,13 @@ body.det-abierto{overflow:hidden}
     <h2 class="heading-sm">Etiqueta</h2>
     <div class="orn" style="margin-top:16px"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
 
-    <div class="dc-pareja rv">
-      <img src="dresscode-pareja.png" alt="Ilustración de vestimenta formal para la boda" loading="lazy">
+    <div class="dc-figs rv">
+      <div class="dc-fig">
+        <img src="caballero.png" alt="Caballero con traje formal" loading="lazy">
+      </div>
+      <div class="dc-fig">
+        <img src="dama.png" alt="Dama con vestido formal" loading="lazy">
+      </div>
     </div>
 
     <div class="dc-code rv">
