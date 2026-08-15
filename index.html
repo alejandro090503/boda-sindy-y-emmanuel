@@ -1120,7 +1120,7 @@ gsap.registerPlugin(ScrollTrigger);
       var inp=document.createElement('input');
       inp.type='text';
       inp.className='rsvp-input rsvp-name-input';
-      inp.placeholder = count === 1 ? 'Tu nombre completo' : 'Invitado ' + i;
+      inp.placeholder = 'Nombre completo del invitado ' + i;
       inp.autocomplete='off';
       inp.maxLength=60;
       var idx=i-1;
@@ -1130,6 +1130,7 @@ gsap.registerPlugin(ScrollTrigger);
     }
   }
   renderNameFields(urlPases);
+  if(fieldsWrap) fieldsWrap.style.display = 'none';
 
   window.rsvpChoice='';
   if(urlPara){ btnYes.disabled = true; btnNo.disabled = true; }
@@ -1138,6 +1139,7 @@ gsap.registerPlugin(ScrollTrigger);
     window.rsvpChoice=choice;
     btnYes.className='rsvp-toggle-btn'+(choice==='yes'?' selected-yes':'');
     btnNo.className ='rsvp-toggle-btn'+(choice==='no'?' selected-no':'');
+    if(fieldsWrap) fieldsWrap.style.display = choice==='yes' ? '' : 'none';
   };
 
   if(urlPara){
