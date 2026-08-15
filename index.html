@@ -1324,9 +1324,9 @@ function initEnvelope(){
     if(envVideo.readyState>=2)play();
     else{envVideo.load();envVideo.addEventListener('canplay',play,{once:true});setTimeout(play,1500);}
     function finish(){if(finished)return;finished=true;mainWrap.style.visibility='visible';gsap.to(envScreen,{opacity:0,duration:1,ease:'power2.inOut',onComplete:function(){envScreen.style.display='none';initMain();}});}
-    /* Fade-out sincronizado con la disolvencia a blanco del video (≈6.7s de 8s) */
+    /* Fade-out sincronizado con la disolvencia a blanco del video (≈7.5s de 8s) */
     envVideo.addEventListener('timeupdate',function(){
-      if(!finished && envVideo.currentTime>=6.7){finish();}
+      if(!finished && envVideo.currentTime>=7.5){finish();}
     });
     envVideo.addEventListener('ended',finish,{once:true});
     setTimeout(finish,8300);
