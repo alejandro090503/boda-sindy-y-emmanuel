@@ -313,7 +313,7 @@ body.det-abierto{overflow:hidden}
 .wheel-scene{position:relative;width:100%;height:420px;margin:36px auto 0;perspective:1300px;transform-style:preserve-3d;overflow:visible}
 .wheel-ring{position:absolute;width:100%;height:100%;transform-style:preserve-3d;cursor:grab}
 .wheel-ring.dragging{cursor:grabbing}
-.wheel-card{position:absolute;width:200px;height:280px;left:50%;top:50%;margin-left:-100px;margin-top:-140px;border-radius:14px;overflow:hidden;border:1.5px solid rgba(141,69,115,.45);box-shadow:0 16px 46px rgba(20,16,10,.25);user-select:none;-webkit-user-select:none;background:var(--surface)}
+.wheel-card{position:absolute;width:150px;height:210px;left:50%;top:50%;margin-left:-75px;margin-top:-105px;border-radius:14px;overflow:hidden;border:1.5px solid rgba(141,69,115,.45);box-shadow:0 16px 46px rgba(20,16,10,.25);user-select:none;-webkit-user-select:none;background:var(--surface)}
 .wheel-card:nth-child(even){border-color:rgba(158,125,80,.55)}
 .wheel-card::after{content:'';position:absolute;inset:0;border-radius:14px;box-shadow:inset 0 0 0 1px rgba(212,197,178,.3);pointer-events:none}
 .wheel-card img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;pointer-events:none}
@@ -1466,7 +1466,7 @@ function initMain(){
   (function(){
     var cards=document.querySelectorAll('.wheel-card'),ring=document.getElementById('wheel-ring');
     if(!ring||cards.length===0)return;
-    var n=cards.length,radius=240,rot=0,vel=0,isDrag=false,startX=0,startRot=0,lastX=0,rafId=null;
+    var n=cards.length,radius=Math.max(240,Math.round((cards[0].offsetWidth/2+16)/Math.tan(Math.PI/n))),rot=0,vel=0,isDrag=false,startX=0,startRot=0,lastX=0,rafId=null;
     cards.forEach(function(card,i){card.style.transform='rotateY('+(360/n*i)+'deg) translateZ('+radius+'px)';});
     function setRot(r){rot=r;gsap.set(ring,{rotateY:rot});}
     function inertia(){if(Math.abs(vel)<0.05){vel=0;return;}vel*=0.94;setRot(rot+vel);rafId=requestAnimationFrame(inertia);}
